@@ -11,9 +11,9 @@ const config = require('../config/database')
 require('dotenv').config()
 const connection = mysql.createConnection(config)
 
-export default function ITAU1 (req, res) {
+export default function ITAU2 (req, res) {
   app.get('/cpfs', (req: Request, res: Response) => {
-    connection.query('SELECT distinct(cpf), entidade, estado FROM ws_itauInput where estado is null limit 1', function (err: Error, result: Response, fields) {
+    connection.query('SELECT distinct(cpf), entidade, estado FROM ws_itauInput3 where estado is null limit 1', function (err: Error, result: Response, fields) {
       if (err) throw new AppError('Falha ao consultar cpfs', 500)
       else {
         res.json(`Resultado: ${[result[0]]}`)
@@ -24,7 +24,7 @@ export default function ITAU1 (req, res) {
 
   const trabalharCpf = async (cpf: string, entidade: string) => {
     console.log('⌛ Consultando CPF: ', cpf, entidade)
-    const { data } = await axios.post(`http://refin.datafast.com.br/itaubmg?usuario=FINANSERV&senha=Fw23asWs2efyf3&usuarioBanco=${process.env.login_itau}&senhaBanco=${process.env.senha_itau}&cpf=${cpf}&convenioRefin=${entidade}&dadosCadastrais=SIM`)
+    const { data } = await axios.post(`http://refin.datafast.com.br/itaubmg?usuario=FINANSERV&senha=Fw23asWs2efyf3&usuarioBanco=${process.env.login_itau2}&senhaBanco=${process.env.senha_itau2}&cpf=${cpf}&convenioRefin=${entidade}&dadosCadastrais=SIM`)
     console.log(`⌛ CPF ${cpf} consultado`, 'Entidade: ', entidade)
     const parser = new xml2js.Parser({
       explicitArray: false,
@@ -35,7 +35,7 @@ export default function ITAU1 (req, res) {
     // console.log(resultado.RESULTADO)
 
     if (resultado.RESULTADO.ERRO === 'NAO') {
-      const query = `UPDATE ws_itauInput set estado = '1' where estado IS NULL and cpf = '${cpf}' and entidade = '${entidade}'  `
+      const query = `UPDATE ws_itauInput3 set estado = '1' where estado IS NULL and cpf = '${cpf}' and entidade = '${entidade}'  `
       // eslint-disable-next-line node/handle-callback-err
       connection.query(query, function (err: Error, result, fields) {
         console.log('ITAU 1 - CPF Consultado Atualizado!')
@@ -105,7 +105,7 @@ export default function ITAU1 (req, res) {
     }
   })
 
-  return res.send({ message: 'Server 1 - ITAU', status: 'Online', file: 'itau1.routes.ts' })
+  return res.send({ message: 'Server 3 - ITAU', status: 'Online', file: 'itau3.routes.ts' })
 }
 
 // 1 login quebra captcha
