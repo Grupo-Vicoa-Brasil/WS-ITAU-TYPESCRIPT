@@ -1,0 +1,45 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Antônio Bernardino <tonybsilvadev@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "babel src --extensions \".js, .ts \" --out-dir dist --copy-files --no-copy-ignored",
+    "start": "node dist/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --respawn --ignore-watch node_modules --no-notify src/server.ts",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/express": "^4.17.9",
+    "@types/jest": "^26.0.18",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "ts-node-dev": "^1.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "node-cron": "^2.0.3",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.23"
+  }
+}
