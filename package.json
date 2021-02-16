@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "build": "babel src --extensions \".js, .ts \" --out-dir dist --copy-files --no-copy-ignored",
-    "start": "node dist/server.ts",
+    "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --respawn --ignore-watch node_modules --no-notify src/server.ts",
     "test": "jest"
   },
@@ -39,6 +39,7 @@
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "node-cron": "^2.0.3",
+    "opn": "^6.0.0",
     "xml-js": "^1.6.11",
     "xml2js": "^0.4.23"
   }

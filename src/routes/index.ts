@@ -11,7 +11,11 @@ import itau8Router from './itau8.routes'
 import itau9Router from './itau9.routes'
 import itau10Router from './itau10.routes'
 
+import gemini from './gemini.routes'
+
 const routes = Router()
+
+routes.use('/gemini', gemini)
 
 routes.use('/itau', itau1Router)
 routes.use('/itau2', itau2Router)
