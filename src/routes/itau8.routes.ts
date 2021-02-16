@@ -38,8 +38,8 @@ export default function ITAU2 (req, res) {
       const query = `UPDATE ws_itauInput7 set estado = '1' where estado IS NULL and cpf = '${cpf}' and entidade = '${entidade}'  `
       // eslint-disable-next-line node/handle-callback-err
       connection.query(query, function (err: Error, result, fields) {
-        console.log('ITAU 1 - CPF Consultado Atualizado!')
-        console.log(new AppUpdated('🌟 ITAU 1 - CPF Constultado Atualizado!'))
+        console.log('ITAU 8 - CPF Consultado Atualizado!')
+        console.log(new AppUpdated('🌟 ITAU 8 - CPF Constultado Atualizado!'))
       })
       // console.log(resultado.RESULTADO.OK)
       console.log(new AppSuccess(`✅ ${resultado.RESULTADO.OK}`))
