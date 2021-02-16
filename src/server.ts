@@ -28,11 +28,11 @@ app.get('/', (req, res) => {
   return res.json({ message: 'Web Service Itaú', status: 'Online', file: 'server.ts' })
 })
 
-app.get('/cpfs', (req, res) => {
-  connection.query('SELECT distinct(cpf), entidade, estado FROM ws_itauInput where estado is null limit 1', function (err, result, fields) {
-    if (err) throw err
-    res.json(result)
-  })
-})
+// app.get('/cpfs', (req, res) => {
+//   connection.query('SELECT distinct(cpf), entidade, estado FROM ws_itauInput where estado is null limit 1', function (err, result, fields) {
+//     if (err) throw err
+//     res.json(result)
+//   })
+// })
 
 app.listen(3333, () => console.log('🔥 Webservice iniciado!'))

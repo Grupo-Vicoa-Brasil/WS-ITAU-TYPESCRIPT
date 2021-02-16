@@ -9,8 +9,6 @@ app.use(express.json())
 
 export default function Gemini (req, res) {
   (async (req, res) => {
-    console.log(new AppSuccess(' Todas as aplicações foram iniciadas com sucesso!'))
-
     // Opens the url in the default browser
     await open('/itau')
     await open('/itau2')
@@ -22,6 +20,6 @@ export default function Gemini (req, res) {
     await open('/itau9')
     await open('/itau10')
 
-    res.json({ message: 'Todas as 10 rotas foram iniciadas com sucesso!' })
+    console.log(new AppSuccess(' Todas as aplicações foram iniciadas com sucesso!'))
   })()
 }
