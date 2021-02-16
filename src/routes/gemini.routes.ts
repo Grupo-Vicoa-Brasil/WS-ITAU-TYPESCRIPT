@@ -1,6 +1,12 @@
 import open from 'opn'
 import AppSuccess from '../errors/AppSuccess'
 
+import express from 'express'
+
+const app = express()
+
+app.use(express.json())
+
 export default function Gemini (req, res) {
   (async (req, res) => {
     console.log(new AppSuccess(' Todas as aplicações foram iniciadas com sucesso!'))
